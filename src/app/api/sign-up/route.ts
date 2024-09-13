@@ -11,7 +11,7 @@ export async function POST(request: Request) {
         const { username, email, password } = await request.json();
 
         const existingUserVerifiedByUsername = await UserModel.findOne({
-            userName: username,
+            username: username,
             isVerified: true,
         })
 
@@ -53,7 +53,7 @@ export async function POST(request: Request) {
             expiryDate.setHours(expiryDate.getHours() + 1);
 
             const newUser = new UserModel({
-                userName: username,
+                username: username,
                 email,
                 password: hashedPassword,
                 verifyCode,
