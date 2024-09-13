@@ -1,3 +1,4 @@
+
 import { NextResponse } from 'next/server'
 import { NextRequest } from 'next/server'
 export { default } from "next-auth/middleware"
@@ -12,7 +13,7 @@ export async function middleware(request: NextRequest) {
     if (token &&
         (
             url.pathname.startsWith('/sign-in') ||
-            url.pathname.startsWith('/sign-un') ||
+            url.pathname.startsWith('/sign-up') ||
             url.pathname.startsWith('/verify') ||
             url.pathname.startsWith('/')
         )) {
@@ -25,7 +26,7 @@ export async function middleware(request: NextRequest) {
 // See "Matching Paths" below to learn more
 export const config = {
     matcher: [
-        '/sign-in',
+        // '/sign-in',
         '/sign-up',
         '/',
         '/dashboard/:path*',
