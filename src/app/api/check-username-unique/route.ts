@@ -45,9 +45,9 @@ export async function GET(request: Request) {
             }, { status: 400 });
         }
 
-        const { username } = result.data;
+        const { username } = result?.data;
 
-        const existingVerifiedUser = await UserModel.findOne({ username, isVerified: true })
+        const existingVerifiedUser = await UserModel.findOne({ username: username, isVerified: true })
 
         if (existingVerifiedUser) {
             return Response.json({
