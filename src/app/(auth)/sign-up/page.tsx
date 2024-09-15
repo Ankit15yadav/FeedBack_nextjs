@@ -76,6 +76,7 @@ const page = () => {
             toast({
                 title: 'Success',
                 description: response.data.message,
+                className: "text-black bg-white"
             })
 
             router.replace(`/verify/${username}`)

@@ -53,13 +53,12 @@ const page = () => {
                 variant: "destructive"
             })
         }
-        // else {
-        //     toast({
-        //         title: "Logged in Successfully",
-        //         description: "Incorrect username or password",
-        //         variant: "destructive"
-        //     })
-        // }
+        toast({
+            title: "Logged in Successfully",
+            className: "text-black bg-white"
+            // variant: "destructive"\
+        })
+
 
         if (result?.url) {
             router.replace('/dashboard');

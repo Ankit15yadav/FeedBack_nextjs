@@ -39,7 +39,8 @@ const page = () => {
             toast({
                 title: "Success",
                 description: response?.data?.message,
-                variant: "default"
+                // variant: "default"
+                className: "text-black bg-white"
             })
 
             router.replace('/sign-in')
