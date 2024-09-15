@@ -38,7 +38,8 @@ const page = () => {
 
             toast({
                 title: "Success",
-                description: response?.data?.message
+                description: response?.data?.message,
+                variant: "default"
             })
 
             router.replace('/sign-in')
