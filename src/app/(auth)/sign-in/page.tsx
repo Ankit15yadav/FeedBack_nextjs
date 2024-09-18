@@ -5,7 +5,7 @@ import * as z from 'zod'
 import { useForm } from "react-hook-form"
 import Link from 'next/link'
 import { useEffect, useState } from "react"
-import { useDebounceValue, useDebounceCallback } from "usehooks-ts"
+// import { useDebounceValue, useDebounceCallback } from "usehooks-ts"
 import { useToast } from "@/hooks/use-toast"
 import { useRouter } from "next/navigation"
 import { signUpSchema } from "@/schemas/signUpSchema"
@@ -53,15 +53,18 @@ const page = () => {
                 variant: "destructive"
             })
         }
-        toast({
-            title: "Logged in Successfully",
-            className: "text-black bg-white"
-            // variant: "destructive"\
-        })
+        else {
+            toast({
+                title: "Logged in Successfully",
+                className: "text-black bg-white"
+                // variant: "destructive"\
+            })
+
+        }
 
 
         if (result?.url) {
-            router.replace('/dashboard');
+            router.replace('dashboard')
         }
         setIsSubmitting(false);
     }
@@ -123,7 +126,7 @@ const page = () => {
                 <div className=" flex  justify-center">
                     <p>
                         Don't have account?{' '}
-                        <Link href={"/sign-un"} className="text-blue-600
+                        <Link href={"/sign-up"} className="text-blue-600
                          hover:text-blue-800 ">
                             Sign up
                         </Link>
