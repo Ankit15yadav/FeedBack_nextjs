@@ -33,7 +33,7 @@ export async function GET(request: Request) {
             { $group: { _id: '$_id', messages: { $push: '$messages' } } }
         ])
 
-        if (!user || user.length === 0) {
+        if (!user || user?.length === 0) {
             return Response.json({
                 success: false,
                 message: "User not found",
@@ -50,7 +50,7 @@ export async function GET(request: Request) {
         console.log("an unexpected error occured", error)
         return Response.json({
             success: false,
-            message: "can not get messages",
+            message: "cannot get messages",
         }, { status: 500 })
     }
 }
